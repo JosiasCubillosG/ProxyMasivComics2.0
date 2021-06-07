@@ -32,5 +32,5 @@ app.use('/comic', createProxyMiddleware(options))
 app.get('/info', (req, res, next) => {
   res.send('This is a proxy');
 });
-
-app.listen(3000, 'localhost', () => console.log('Escuchando en el puerto 3000'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`listening on ${PORT}`));
